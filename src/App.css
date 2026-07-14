@@ -1,0 +1,423 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.app-shell header {
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-shell header p {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.app-shell main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 16px;
+}
+
+/* ---------- Login ---------- */
+.household-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+.household-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.household-login label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.household-login input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-h);
+}
+
+.household-login button {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.household-login button:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  color: var(--danger);
+  background: var(--danger-bg);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Home / actions ---------- */
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primary-action {
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ---------- Receipt upload flow ---------- */
+.receipt-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.receipt-flow .back-link {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.capture-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.capture-choices label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  background: var(--surface);
+  font-weight: 600;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.capture-choices input[type='file'] {
+  display: none;
+}
+
+.image-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  display: block;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.image-preview.dimmed img {
+  filter: brightness(0.5);
+}
+
+.preview-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.preview-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.preview-actions .cta {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+}
+
+.extraction-error {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Review screen ---------- */
+.receipt-summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.receipt-summary-card .field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.receipt-summary-card .field-row label {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.receipt-summary-card input,
+.receipt-summary-card select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  text-align: right;
+  min-width: 0;
+  flex: 1;
+  max-width: 60%;
+}
+
+.field-missing {
+  border-color: var(--warning) !important;
+  background: var(--warning-bg) !important;
+}
+
+.split-toggle {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.split-toggle button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.split-toggle button.active {
+  background: var(--accent);
+  color: white;
+}
+
+.mismatch-warning {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: var(--warning-bg);
+  color: var(--warning);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.item-row-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.item-row-summary .item-name {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+.item-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.item-price .list-price {
+  text-decoration: line-through;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.item-price .paid-price {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.discount-pill {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.item-row-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.item-row-edit .edit-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-row-edit .edit-field label {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.item-row-edit input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  text-align: right;
+  width: 100px;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 13px;
+  padding: 4px 0;
+  align-self: flex-start;
+}
+
+.add-item-btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  background: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sticky-save-bar {
+  position: sticky;
+  bottom: 0;
+  background: var(--bg);
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sticky-save-bar .item-count {
+  font-size: 13px;
+  color: var(--text);
+  text-align: center;
+}
+
+.sticky-save-bar button {
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.sticky-save-bar button:disabled {
+  opacity: 0.5;
+}
+
+.save-success {
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.save-success .check {
+  font-size: 48px;
+}
